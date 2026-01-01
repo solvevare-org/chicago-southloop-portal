@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	/* Make native buttons softer and consistent */
+	button {
+		@apply rounded-md;
+	}
+}
+
+@layer components {
+	.btn {
+		@apply rounded-md px-4 py-2 transition-shadow focus:outline-none;
+	}
+
+	.btn-primary {
+		@apply btn bg-orange-600 text-white hover:bg-orange-500;
+	}
+
+	.chip {
+		@apply inline-flex items-center px-3 py-1 rounded-full bg-gray-800 text-white text-sm shadow-sm;
+	}
+
+	.card {
+		@apply bg-white rounded-lg shadow-sm p-4;
+	}
+
+	.logo {
+		@apply bg-white text-black px-4 py-2 rounded font-bold text-2xl shadow-sm;
+	}
+}
