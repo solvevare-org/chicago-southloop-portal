@@ -1,27 +1,29 @@
 import { useEffect, useState } from 'react';
-import { Sidebar } from '../components/Sidebar';
 import { useApp } from '../store/AppContext';
 import { supabase } from '../lib/supabase';
 import type { Product } from '../types';
 
 export function ProductListPage() {
-  const { selectedCategory, setSelectedProduct, setCurrentPage, categories } = useApp();
+  const { selectedCategory, setSelectedProduct, setCurrentPage, categories, searchQuery } = useApp();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     loadProducts();
-  }, [selectedCategory]);
+  }, [selectedCategory, searchQuery]);
 
   const loadProducts = async () => {
     setLoading(true);
     let query = supabase.from('products').select('*');
-
     if (selectedCategory) {
       const category = categories.find(c => c.slug === selectedCategory);
       if (category) {
         query = query.eq('category_id', category.id);
       }
+    }
+
+    if (searchQuery && searchQuery.trim().length > 0) {
+      query = query.ilike('name', `%${searchQuery}%`);
     }
 
     const { data } = await query.order('name');
@@ -39,12 +41,8 @@ export function ProductListPage() {
     : 'All Products';
 
   return (
-    <div className="flex min-h-[calc(100vh-280px)] bg-gray-100">
-      <div className="w-full md:w-64 flex-shrink-0">
-        <Sidebar />
-      </div>
-
-      <main className="flex-1 p-4 md:p-8">
+    <div className="min-h-[calc(100vh-280px)] bg-gray-100">
+      <main className="max-w-7xl mx-auto flex-1 p-4 md:p-8">
         <div className="mb-6">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
             {categoryName.toUpperCase()}

@@ -39,7 +39,7 @@ export function CheckoutPage() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800">SECURE CHECKOUT</h1>
-          <button className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
             CONTINUE TO PAY METHOD
           </button>
         </div>
@@ -265,7 +265,7 @@ export function CheckoutPage() {
 
               <button
                 type="submit"
-                className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
               >
                 CONTINUE TO PAY METHOD
               </button>

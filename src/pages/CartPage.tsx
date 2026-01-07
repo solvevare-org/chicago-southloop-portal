@@ -1,4 +1,3 @@
-import { Sidebar } from '../components/Sidebar';
 import { useApp } from '../store/AppContext';
 import { supabase } from '../lib/supabase';
 import { Trash2 } from 'lucide-react';
@@ -21,12 +20,8 @@ export function CartPage() {
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="flex min-h-[calc(100vh-280px)] bg-gray-100">
-      <div className="w-full md:w-64 flex-shrink-0">
-        <Sidebar />
-      </div>
-
-      <main className="flex-1 p-4 md:p-8">
+    <div className="min-h-[calc(100vh-280px)] bg-gray-100">
+      <main className="max-w-7xl mx-auto p-4 md:p-8">
         <div className="flex flex-col lg:flex-row gap-6">
           <div className="flex-1">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">SHOPPING CART</h1>
@@ -39,7 +34,7 @@ export function CartPage() {
                 <p className="text-gray-500 text-lg">Your cart is empty</p>
                 <button
                   onClick={() => setCurrentPage('products')}
-                  className="mt-6 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+                  className="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
                 >
                   Continue Shopping
                 </button>
@@ -122,7 +117,7 @@ export function CartPage() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={() => setCurrentPage('products')}
-                    className="flex-1 bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
                   >
                     Continue Shopping
                   </button>
@@ -158,7 +153,7 @@ export function CartPage() {
 
                 <button
                   onClick={() => setCurrentPage('checkout')}
-                  className="w-full mt-6 bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                  className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
                 >
                   PROCEED TO CHECKOUT
                 </button>

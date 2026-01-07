@@ -24,7 +24,7 @@ export function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-sky-50 flex flex-col">
       <main className="flex-grow flex items-center justify-center py-12 px-6">
         <div className="w-full max-w-6xl bg-white drop-shadow-md rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
           <div className="p-10 flex flex-col justify-center">
@@ -40,7 +40,7 @@ export function SignInPage() {
                   id="username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="mt-2 w-full rounded-md border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="mt-2 w-full rounded-md border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 />
               </div>
 
@@ -51,24 +51,24 @@ export function SignInPage() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="mt-2 w-full rounded-md border border-gray-200 px-4 py-3 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="mt-2 w-full rounded-md border border-gray-200 px-4 py-3 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 />
               </div>
 
               {error && <div className="text-sm text-red-600">{error}</div>}
 
               <div className="flex items-center justify-between">
-                <button type="submit" className="inline-flex items-center justify-center rounded-md bg-orange-600 text-white px-6 py-2 hover:bg-orange-700">Sign in</button>
-                <button type="button" onClick={fillDemo} className="text-sm text-orange-600 hover:underline">Use demo credentials</button>
+                <button type="submit" className="inline-flex items-center justify-center rounded-md bg-blue-600 text-white px-6 py-2 hover:bg-blue-700">Sign in</button>
+                <button type="button" onClick={fillDemo} className="text-sm text-blue-600 hover:underline">Use demo credentials</button>
               </div>
 
               <div className="pt-4 border-t border-gray-100">
-                <button type="button" onClick={() => setCurrentPage('request-account')} className="text-sm text-orange-600 font-medium hover:underline">Request New Account</button>
+                <button type="button" onClick={() => setCurrentPage('request-account')} className="text-sm text-blue-600 font-medium hover:underline">Request New Account</button>
               </div>
             </form>
           </div>
 
-          <div className="hidden md:flex items-center justify-center bg-gradient-to-tr from-indigo-50 to-white p-8">
+          <div className="hidden md:flex items-center justify-center bg-gradient-to-tr from-sky-100 to-white p-8">
             <div className="w-64">
               <img src="/hero.svg" alt="illustration" className="w-full h-auto object-contain" />
             </div>

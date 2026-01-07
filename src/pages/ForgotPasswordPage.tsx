@@ -31,15 +31,15 @@ export function ForgotPasswordPage() {
               </div>
 
               <div className="flex items-center gap-4 mt-4">
-                <button type="submit" className="bg-orange-600 text-white px-4 py-2">SEND EMAIL</button>
-                <button type="button" onClick={() => setCurrentPage('signin')} className="bg-gray-200 px-4 py-2">CANCEL</button>
+                <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors">SEND EMAIL</button>
+                <button type="button" onClick={() => setCurrentPage('signin')} className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded transition-colors">CANCEL</button>
               </div>
             </form>
           ) : (
             <div className="max-w-md">
               <div className="text-green-600 font-semibold">Password reset email sent.</div>
               <div className="mt-4">
-                <button className="bg-orange-600 text-white px-4 py-2" onClick={() => setCurrentPage('signin')}>Back to Sign In</button>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors" onClick={() => setCurrentPage('signin')}>Back to Sign In</button>
               </div>
             </div>
           )}

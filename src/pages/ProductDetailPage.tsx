@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Sidebar } from '../components/Sidebar';
 import { useApp } from '../store/AppContext';
 import { supabase, getSessionId } from '../lib/supabase';
 import { ArrowLeft, Plus, Minus } from 'lucide-react';
@@ -49,12 +48,8 @@ export function ProductDetailPage() {
   const specs = selectedProduct.specs as Record<string, string>;
 
   return (
-    <div className="flex min-h-[calc(100vh-280px)] bg-gray-100">
-      <div className="w-full md:w-64 flex-shrink-0">
-        <Sidebar />
-      </div>
-
-      <main className="flex-1 p-4 md:p-8">
+    <div className="min-h-[calc(100vh-280px)] bg-gray">
+      <main className="max-w-7xl mx-auto p-4 md:p-8">
         <button
           onClick={() => setCurrentPage('products')}
           className="flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-6 transition-colors"
@@ -165,7 +160,7 @@ export function ProductDetailPage() {
               <button
                 onClick={handleAddToCart}
                 disabled={adding}
-                className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {adding ? 'ADDING TO CART...' : 'ADD TO CART'}
               </button>

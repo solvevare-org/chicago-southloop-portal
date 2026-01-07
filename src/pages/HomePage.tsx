@@ -1,13 +1,9 @@
-import { Sidebar } from '../components/Sidebar';
+import { /* Sidebar removed - categories moved into Header */ } from '../components/Sidebar';
 
 export function HomePage() {
   return (
-    <div className="flex min-h-[calc(100vh-280px)] bg-gray-100">
-      <div className="w-full md:w-56 flex-shrink-0">
-        <Sidebar />
-      </div>
-
-      <main className="flex-1 p-4 md:p-8">
+    <div className="min-h-[calc(100vh-280px)] bg-gray-100">
+      <main className="max-w-7xl mx-auto p-4 md:p-8">
         <div className="card overflow-hidden">
           <div className="relative h-64 md:h-96 bg-gradient-to-r from-purple-900 via-orange-600 to-pink-500 rounded-lg">
             <div className="absolute inset-0 flex items-center justify-center">

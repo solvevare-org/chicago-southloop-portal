@@ -153,94 +153,88 @@ export function MyAccountPage() {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12">
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-extrabold">Account Dashboard</h1>
-      </div>
-
-      <div className="grid grid-cols-12 gap-6">
-        <aside className="col-span-12 md:col-span-3">
-          <div className="md:sticky md:top-20">
-            <div className="bg-white border rounded-lg shadow-sm overflow-hidden">
-              <div className="px-4 py-4 flex items-center gap-3 border-b">
-                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-600">
-                  <User className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold">{userName ?? profile?.username ?? 'Valued Customer'}</div>
-                  <div className="text-xs text-gray-500">Manage account & settings</div>
-                </div>
-              </div>
-
-              <nav className="p-2">
-                <ul className="flex flex-col">
-                  <li>
-                    <button
-                      onClick={() => setTab('dashboard')}
-                      className={`w-full text-left flex items-center gap-3 px-3 py-3 rounded-md transition ${
-                        tab === 'dashboard' ? 'bg-orange-50 text-orange-700 font-semibold' : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <User className="w-5 h-5 text-gray-500" />
-                      <span className="text-sm">Account Dashboard</span>
-                    </button>
-                  </li>
-
-                  <li>
-                    <button
-                      onClick={() => setTab('address')}
-                      className={`w-full text-left flex items-center gap-3 px-3 py-3 rounded-md transition ${
-                        tab === 'address' ? 'bg-orange-50 text-orange-700 font-semibold' : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <MapPin className="w-5 h-5 text-gray-500" />
-                      <span className="text-sm">Address Book</span>
-                    </button>
-                  </li>
-
-                  <li>
-                    <button
-                      onClick={() => setTab('phone')}
-                      className={`w-full text-left flex items-center gap-3 px-3 py-3 rounded-md transition ${
-                        tab === 'phone' ? 'bg-orange-50 text-orange-700 font-semibold' : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <Phone className="w-5 h-5 text-gray-500" />
-                      <span className="text-sm">Phone Book</span>
-                    </button>
-                  </li>
-
-                  <li>
-                    <button
-                      onClick={() => setTab('allowance')}
-                      className={`w-full text-left flex items-center gap-3 px-3 py-3 rounded-md transition ${
-                        tab === 'allowance' ? 'bg-orange-50 text-orange-700 font-semibold' : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <CreditCard className="w-5 h-5 text-gray-500" />
-                      <span className="text-sm">Allowance Tracking</span>
-                    </button>
-                  </li>
-
-                  <li>
-                    <button
-                      onClick={() => setTab('orders')}
-                      className={`w-full text-left flex items-center gap-3 px-3 py-3 rounded-md transition ${
-                        tab === 'orders' ? 'bg-orange-50 text-orange-700 font-semibold' : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <List className="w-5 h-5 text-gray-500" />
-                      <span className="text-sm">Order History</span>
-                    </button>
-                  </li>
-                </ul>
-              </nav>
+    <div className="bg-gray-50 min-h-[calc(100vh-280px)] py-8">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto px-4 md:px-6 gap-6">
+        <aside className="w-full md:w-80 flex-shrink-0">
+          <div className="sticky top-20 bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+            <div className="px-6 py-4 flex items-center gap-3 border-b">
+            <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-600">
+              <User className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-sm font-semibold">{userName ?? profile?.username ?? 'Valued Customer'}</div>
+              <div className="text-xs text-gray-500">Manage account & settings</div>
             </div>
           </div>
-        </aside>
 
-        <main className="col-span-12 md:col-span-9">
-          <div className="bg-white border rounded-lg shadow-sm p-6">
+          <nav className="p-3">
+            <ul className="flex flex-col space-y-1">
+              <li>
+                <button
+                  onClick={() => setTab('dashboard')}
+                  className={`w-full text-left flex items-center gap-3 px-3 py-3 rounded-md transition ${
+                    tab === 'dashboard' ? 'bg-sky-50 text-blue-700 font-semibold' : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  <User className="w-5 h-5 text-gray-500" />
+                  <span className="text-sm">Account Dashboard</span>
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => setTab('address')}
+                  className={`w-full text-left flex items-center gap-3 px-3 py-3 rounded-md transition ${
+                    tab === 'address' ? 'bg-sky-50 text-blue-700 font-semibold' : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  <MapPin className="w-5 h-5 text-gray-500" />
+                  <span className="text-sm">Address Book</span>
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => setTab('phone')}
+                  className={`w-full text-left flex items-center gap-3 px-3 py-3 rounded-md transition ${
+                    tab === 'phone' ? 'bg-sky-50 text-blue-700 font-semibold' : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  <Phone className="w-5 h-5 text-gray-500" />
+                  <span className="text-sm">Phone Book</span>
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => setTab('allowance')}
+                  className={`w-full text-left flex items-center gap-3 px-3 py-3 rounded-md transition ${
+                    tab === 'allowance' ? 'bg-sky-50 text-blue-700 font-semibold' : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  <CreditCard className="w-5 h-5 text-gray-500" />
+                  <span className="text-sm">Allowance Tracking</span>
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => setTab('orders')}
+                  className={`w-full text-left flex items-center gap-3 px-3 py-3 rounded-md transition ${
+                    tab === 'orders' ? 'bg-sky-50 text-blue-700 font-semibold' : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  <List className="w-5 h-5 text-gray-500" />
+                  <span className="text-sm">Order History</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <main className="flex-1">
+        <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
             {tab === 'dashboard' && (
               <div>
                 <h2 className="text-xl font-semibold mb-4">Account Dashboard</h2>
@@ -273,7 +267,7 @@ export function MyAccountPage() {
                     </div>
                     {pwMessage && <div className="text-sm text-green-600">{pwMessage}</div>}
                     <div>
-                      <button className="bg-orange-600 text-white px-4 py-2 rounded">UPDATE PASSWORD</button>
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors">UPDATE PASSWORD</button>
                     </div>
                   </form>
                 </section>
@@ -295,7 +289,7 @@ export function MyAccountPage() {
                       </div>
                       {emailMsg && <div className="text-sm text-green-600">{emailMsg}</div>}
                       <div>
-                        <button className="bg-orange-600 text-white px-4 py-2 rounded">UPDATE EMAIL</button>
+                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors">UPDATE EMAIL</button>
                       </div>
                     </form>
                 </section>
@@ -318,7 +312,7 @@ export function MyAccountPage() {
                     </div>
                     {secMsg && <div className="text-sm text-green-600">{secMsg}</div>}
                     <div>
-                      <button className="bg-orange-600 text-white px-4 py-2 rounded">UPDATE SECURITY QUESTION</button>
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors">UPDATE SECURITY QUESTION</button>
                     </div>
                   </form>
                 </section>
@@ -329,7 +323,7 @@ export function MyAccountPage() {
               <div>
                 <h2 className="text-xl font-semibold mb-4">ADDRESS BOOK</h2>
                 <div className="flex justify-end mb-4">
-                  <button onClick={addAddress} className="bg-orange-600 text-white px-3 py-2">ADD NEW</button>
+                  <button onClick={addAddress} className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded transition-colors">ADD NEW</button>
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">PERSONAL</h3>
@@ -376,7 +370,7 @@ export function MyAccountPage() {
               <div>
                 <h2 className="text-xl font-semibold mb-4">PHONE BOOK</h2>
                 <div className="flex justify-end mb-4">
-                  <button onClick={addPhone} className="bg-orange-600 text-white px-3 py-2">ADD NEW</button>
+                  <button onClick={addPhone} className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded transition-colors">ADD NEW</button>
                 </div>
                 <h3 className="font-semibold mb-2">PERSONAL</h3>
                 <table className="w-full text-sm border-collapse">

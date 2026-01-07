@@ -27,6 +27,8 @@ interface AppContextType {
   profile: Profile | null;
   updateProfile: (patch: Partial<Profile>) => void;
   logout: () => void;
+  searchQuery: string;
+  setSearchQuery: (q: string) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -40,6 +42,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   useEffect(() => {
     loadCategories();

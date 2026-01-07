@@ -1,9 +1,9 @@
 export function Footer() {
   return (
-    <footer className="relative bg-black text-gray-300 overflow-hidden">
+    <footer className="relative bg-[#0a3764] text-gray-100 overflow-hidden border-t border-[#0a3764]">
       
       {/* subtle background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_40%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.05),transparent_40%)]" />
 
       <div className="relative max-w-7xl mx-auto px-8 py-20">
 
@@ -13,12 +13,10 @@ export function Footer() {
           {/* Column 1 - Brand */}
           <div className="space-y-6">
             <div className="inline-flex items-center gap-3">
-              <div className="bg-white text-black px-5 py-2 rounded-xl font-extrabold tracking-wide text-sm">
-                GALLS
-              </div>
+              <img src="/new-logo2.png" alt="Galls logo" className="h-[85px] w-auto object-contain" />
             </div>
 
-            <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
+            <p className="text-sm text-gray-300 leading-relaxed max-w-sm">
               Premium uniforms, gear, and equipment designed for professionals
               who demand durability, comfort, and performance.
             </p>
@@ -26,7 +24,7 @@ export function Footer() {
 
           {/* Column 2 - Quick Links */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-6">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">
               Quick Links
             </h4>
             <ul className="space-y-4 text-sm">
@@ -34,7 +32,7 @@ export function Footer() {
                 <li key={item}>
                   <a
                     href="#"
-                    className="relative w-fit block hover:text-white transition-colors
+                    className="relative w-fit block text-gray-300 hover:text-white transition-colors
                                after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0
                                after:bg-white after:transition-all hover:after:w-full"
                   >
@@ -47,7 +45,7 @@ export function Footer() {
 
           {/* Column 3 - Products */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-6">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">
               Products
             </h4>
             <ul className="space-y-4 text-sm">
@@ -55,7 +53,7 @@ export function Footer() {
                 (item) => (
                   <li
                     key={item}
-                    className="hover:text-white transition-colors cursor-pointer"
+                    className="text-gray-300 hover:text-white transition-colors cursor-pointer"
                   >
                     {item}
                   </li>
@@ -67,10 +65,10 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="my-16 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        <div className="my-16 h-px bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.2)] to-transparent" />
 
         {/* Bottom Row */}
-        <div className="text-center text-xs text-gray-500 tracking-wide">
+        <div className="text-center text-xs text-gray-400 tracking-wide">
           © {new Date().getFullYear()} Galls. All Rights Reserved.
         </div>
 
